@@ -11,7 +11,7 @@ https://github.com/user-attachments/assets/af223966-fc76-4e06-8397-6935d7d880eb
 
 ### 🎮 [Скачать с App Store](https://apps.apple.com/us/app/id6761921730)
 
----
+
 
 ## Стек и зависимости
 
@@ -27,7 +27,7 @@ https://github.com/user-attachments/assets/af223966-fc76-4e06-8397-6935d7d880eb
 - `Unity Localization Package`
 - `Unity Test Framework`
 
----
+
 
 ## Архитектура
 
@@ -39,7 +39,7 @@ https://github.com/user-attachments/assets/af223966-fc76-4e06-8397-6935d7d880eb
 - `Bootstrap` обрабатывает инициализацию игры.
 - `AppStateMachine` управляет состояниями игры: `HomeState`, `BattleState`, `TutorialBattleState`. Каждое состояние загружает свои сцены и управляет эффектом перехода.
 
----
+
 
 ## Экономика и конфиги
 
@@ -55,7 +55,7 @@ https://github.com/user-attachments/assets/af223966-fc76-4e06-8397-6935d7d880eb
 
 `EconomyService` - единственная точка с формулами баланса, покрыта unit-тестами.
 
----
+
 
 ## Сохранения
 
@@ -65,7 +65,7 @@ https://github.com/user-attachments/assets/af223966-fc76-4e06-8397-6935d7d880eb
 
 Модули, сохраняющие состояние: `CurrencyService`, `EquipmentDataService`, `MergeDataService`, `IdleDataService`, `OfflineIncomeDataService`, `TutorialDataService`, `BattleStatsDataService`, `AudioService`.
 
----
+
 
 
 ## Battle Flow
@@ -78,7 +78,7 @@ https://github.com/user-attachments/assets/af223966-fc76-4e06-8397-6935d7d880eb
 
 Новый режим боя (например, Team, Boss, Survival) = новая реализация `IBattleFlow`.
 
----
+
 
 ## AI ботов
 
@@ -95,7 +95,7 @@ https://github.com/user-attachments/assets/af223966-fc76-4e06-8397-6935d7d880eb
 
 Поскольку `BotBrain` - просто компонент на префабе танка, для босса или особого врага достаточно заменить компонент BotBrain на другую реализацию `ITankInput`.
 
----
+
 
 ## Dynamic Difficulty Adjustment
 
@@ -106,7 +106,7 @@ https://github.com/user-attachments/assets/af223966-fc76-4e06-8397-6935d7d880eb
 
 Оба счётчика сбрасываются при экипировке детали нового максимального уровня. Логика изолирована в `BattleDifficultyService` и покрыта unit-тестами.
 
----
+
 
 ## Туториал
 
@@ -118,7 +118,7 @@ https://github.com/user-attachments/assets/af223966-fc76-4e06-8397-6935d7d880eb
 Используется однонаправленная зависимость: туториал использует код игры, но игровой код ничего о туториале не знает. Прогресс сохраняется после каждого шага - рестарт посреди обучения продолжит с последней завершённой точки.
 
 
----
+
 
 ## Реклама
 
@@ -126,21 +126,21 @@ https://github.com/user-attachments/assets/af223966-fc76-4e06-8397-6935d7d880eb
 
 Поверх провайдера стоит `AdsService`, который ограничивает частоту интерстишиал-рекламы и отправляет рекламные события в аналитику.
 
----
+
 
 ## Аналитика
 
 `IAnalyticsService` реализована через `AppMetricaAnalyticsService` в продакшене и `MockAnalyticsService` в dev-билдах. Плейсменты и названия событий - константы в `AnalyticsEvents`.
 
----
 
----
+
+
 
 ## Тесты
 
 EditMode unit-тесты (Unity Test Framework) покрывают критичные изолированные системы: `EconomyService` (все формулы баланса), `BattleDifficultyService` (DDA логика), `MergeModel` / `MergeRuleService` (правила слияния), `CostFormatter` (форматирование валюты).
 
----
+
 
 ## Контакты
 
